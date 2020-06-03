@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>0814171138王明刚</title>
+    <link rel="short icon" href="../images/Resource/icon.png">
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        .i_head_div{
+            text-align: center;
+        }
+        .i_head_div img{
+            margin-top: 50px;
+        }
+        .i_inner_div{
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            width: 90%;
+            margin: 0 auto;
+            height: 100px;
+            margin-top: 30px;
+            background: white;
+        }
+        .i_inner_div div{
+            height: 50px;
+        }
+
+        .i_inner_div div span{
+            padding-left: 15px;
+            font-size: 20px;
+            line-height: 50px;
+
+        }
+        .i_login_div{
+            height: 50px;
+            background: rgb(36,92,161);
+            width: 90%;
+            margin-top: 20px;
+            font-size: 20px;
+            color: white;
+        }
+        .i_login_div span{
+            font-size: 20px;
+            color: white;
+        }
+        .i_login_div{
+            height: 50px;
+            width: 90%;
+            text-align: center;
+            background: rgb(36,92,161);
+            border-radius: 5px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .i_login_div input{
+            font-size: 20px;
+            line-height: 50px;
+            color: white;
+        }
+
+        input{
+            outline: medium;
+            background-color: transparent;
+            border: 0;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <span>登录</span>
+</header>
+<div class="i_head_div">
+    <img src="../images/Resource/head.png">
+</div>
+
+<form action="">
+    <div class="i_inner_div">
+        <div style="border-bottom: 1px solid #dddddd">
+            <span>账号:</span>
+            <input type="text" value="admin" id="i_userName">
+        </div>
+        <div>
+            <span>密码:</span>
+            <input type="password" value="admin" id="i_passwd">
+        </div>
+    </div>
+    <div class="i_login_div">
+        <input type="button" value="登录" onclick="" id="sum3">
+    </div>
+</form>
+<script type="text/javascript" src="../js/common.js"></script>
+<script>
+
+    var btn =  document.getElementById("sum3");
+    btn.onclick=function () {
+        var username = encodeURIComponent(document.getElementById("i_userName").value);
+        var pwd = encodeURIComponent(document.getElementById("i_passwd").value);
+
+        var str = "username="+username+"&pwd="+pwd;
+        sendMsg("post","https://mockapi.eolinker.com/2ZhGVxjacb39010e6753bd9c02ee803e6e3bfeab6e8007c/login",str,function (str) {
+            if (str == "登录成功"){
+                location.href = "ServerForDrop.html";
+            }
+            else
+            {
+                alert(str)
+            }
+        })
+    }
+
+</script>
+
+</body>
+</html>
