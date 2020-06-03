@@ -38,8 +38,22 @@
 </header>
 <!--第二部分-->
 <section>
-    <img class="DS_second_section" src="../images/Resource/banner-1.png" alt="请检查网络"/>
+    <img id="banerImg" class="DS_second_section" src="../images/Resource/banner-1.png" alt="请检查网络"/>
+    <script>
+        var bannerImg = document.getElementById("banerImg");
+        var imgNum = 1;
+        function changeImg() {
+            if(imgNum >3){
+                imgNum = 1;
+            }
+            bannerImg.src = "../images/Resource/banner-"+imgNum+".png";
+            imgNum++;
+        }
+        setInterval(changeImg,2000);
+    </script>
+
 </section>
+
 <!-- 第三部分-->
 <!--一个ul是一行 一个li是一列-->
 <section>

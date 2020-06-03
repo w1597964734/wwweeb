@@ -56,10 +56,10 @@
 <!--第二部分-->
 <div class="MD_external_div">
     <img src="../images/Resource/banner5.png" alt="">
-    <div class=" MD_inner_div" onclick="back">
+    <div class=" MD_inner_div">
         <img src="../images/Resource/head.png" alt="">
         <span>华杉</span>
-        <button>退出登录</button>
+        <button onclick="logout()">退出登录</button>
     </div>
 
 
@@ -119,8 +119,7 @@
 </footer>
 
 <script>
-    function back() {
-        alert("退出成功")
+    function logout(){
         location.href = "index.html"
     }
 </script>
